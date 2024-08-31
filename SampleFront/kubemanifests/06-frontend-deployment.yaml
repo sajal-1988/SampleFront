@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: frontend-webapp
+  labels:
+    app: frontend-webapp
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend-webapp
+  template: 
+    metadata:
+      labels: 
+        app: frontend-webapp
+        tier: frontend
+    spec: 
+      containers: 
+        - name: frontend-webapp
+          image: sajalgupta1988/samplefront
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SajalSettings__ApiUrl
+              value: http://my-backend-service:8081/
