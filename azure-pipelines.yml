@@ -6,7 +6,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: default
 
 resources:
 - repo: self
