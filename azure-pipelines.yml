@@ -6,7 +6,7 @@ trigger:
 - master
 
 pool:
-   vmImageName: 'ubuntu-latest'
+   vmImage: 'ubuntu-latest'
 
 resources:
 - repo: self
@@ -25,7 +25,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-       vmImageName: 'ubuntu-latest'
+       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
