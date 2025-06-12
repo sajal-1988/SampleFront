@@ -28,10 +28,8 @@ spec:
       - name: istio-ingressgateway
         enabled: true
         k8s:
-          service:
-            type: LoadBalancer
-            annotations:
-              service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+          serviceAnnotations:
+            service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 EOF
  
 # Download and install Istio
