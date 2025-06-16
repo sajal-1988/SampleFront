@@ -78,7 +78,7 @@ if [[ "$installPrometheusAndGrafana" == "true" ]]; then
   helm install prometheus prometheus-community/kube-prometheus-stack \
     --create-namespace \
     --namespace istio-system \
-	--set grafana.enabled=true \
+    --set grafana.enabled=true \
     --set grafana.defaultDashboardsEnabled=true \
     --set prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues=false \
     --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false
