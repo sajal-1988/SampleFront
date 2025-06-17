@@ -74,14 +74,8 @@ helm repo update
 
 # Install Prometheus
 if [[ "$installPrometheusAndGrafana" == "true" ]]; then
-  echo "Installing Prometheus and Grafana..."
-  helm install prometheus prometheus-community/kube-prometheus-stack \
-    --create-namespace \
-    --namespace istio-system \
-    --set grafana.enabled=true \
-    --set grafana.defaultDashboardsEnabled=true \
-    --set prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues=false \
-    --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false
+  echo "Installing Prometheus..."
+  kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.26/samples/addons/prometheus.yaml
 fi
 
 
